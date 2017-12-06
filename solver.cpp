@@ -2,7 +2,7 @@
 #include <cstdlib>
 using namespace std;
 
-int pattern[] = {4,3,2,1};
+int pattern[] = {2,2,2,2};
 
 int totalPoss = 1296;
 int S[1296][4];
@@ -39,18 +39,6 @@ bool arraysAreEqual(int a[], int b[], int n) {
 }
 
 int main() {
-	/*
-	int a[] = {3,2,3,2};
-	int b[] = {3,3,2,2};
-	int c[] = {0,0};
-	feedback(a, b, c);
-	cout << c[0] << " " << c[1] << endl;
-	*/
-	/*
-	int a[] = {1,1,2,2};
-	int b[] = {1,1,2,2};
-	cout << arraysAreEqual(a, b, 4) << endl;
-	*/
 
 	int inc = 0;
 	for (int i = 0; i < 6; i++) {
@@ -67,11 +55,12 @@ int main() {
 		}
 	}
 
-
 	int guess[] = {0,0,1,1};
 	int numPossibleGuess = 0;
 
 	for (int guessIter = 0; guessIter < 10; guessIter++) {
+		cout << guess[0] << guess[1] << guess[2] << guess[3] << endl;
+
 		int guessFB[] = {0,0};
 		feedback(guess, pattern, guessFB);
 		numPossibleGuess = 0;
@@ -87,7 +76,6 @@ int main() {
 				}
 			}
 		}
-
 
 		// pick new guess
 		int iRandGuess = rand() % numPossibleGuess;
@@ -107,44 +95,7 @@ int main() {
 			cout << guess[0] << guess[1] << guess[2] << guess[3] << endl;
 			break;
 		}
-
-		cout << guess[0] << guess[1] << guess[2] << guess[3] << endl;
-
-		/*
-		for (int i = 0; i < 10; i++) {
-			cout << S[i][0] << S[i][1] << S[i][2] << S[i][3] << endl;
-		}
-		cout << endl;*/
-
-		/*int newS[numPossibleGuess][4] = {0};
-		int iS = 0;
-		int inewS = 0;
-		while (inewS < numPossibleGuess) {
-			if(S[iS][0] != -1) {
-				for (int j = 0; j < 4; j++) {
-					newS[inewS][j] = S[iS][j];
-				}
-				inewS++;
-			}
-			iS++;
-		}*/
-
-
-
 	}
-
-
-	/*
-	for (int i = 0; i < 20; i++) {
-		cout << S[i][0] << S[i][1] << S[i][2] << S[i][3] << endl;
-	}
-	*/
-
-	/*
-	for (int i = 800; i < 900; i++) {
-		cout << S[i][0] << S[i][1] << S[i][2] << S[i][3] << endl;
-	}
-	*/
 
 	return 0;
 }
