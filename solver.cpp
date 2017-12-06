@@ -1,8 +1,8 @@
 #include <iostream>
-#include <cstdlib>
+#include <cstdlib> 
 using namespace std;
 
-int pattern[] = {2,2,2,2};
+int pattern[] = {1,2,3,4};
 
 int totalPoss = 1296;
 int S[1296][4];
@@ -91,7 +91,7 @@ int main() {
 			guess[i] = S[iS][i];
 		}
 
-		if (numPossibleGuess <= 1) {
+		if (arraysAreEqual(guess, pattern, 4)) {
 			cout << guess[0] << guess[1] << guess[2] << guess[3] << endl;
 			break;
 		}
